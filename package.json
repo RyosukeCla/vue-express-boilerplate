@@ -28,6 +28,7 @@
     "pug": "2.0.0-rc.4",
     "redis": "2.8.0",
     "serve-favicon": "^2.4.3",
+    "socket.io": "^2.0.3",
     "vue": "2.4.2",
     "webpack": "3.5.6"
   },
