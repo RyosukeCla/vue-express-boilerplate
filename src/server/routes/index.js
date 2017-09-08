@@ -1,3 +1,3 @@
 export default {
-  account: require('./account').default
+  '/account': require('./account').default
 }

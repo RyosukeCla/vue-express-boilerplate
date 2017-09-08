@@ -10,7 +10,6 @@ module.exports = (app) => {
   app.use('/assets', express.static(__assets))
 
   for (const [key, route] of Object.entries(routes)) {
-    console.log(key, route)
     app.use(key, route)
   }
 
