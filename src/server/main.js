@@ -1,15 +1,9 @@
 import express from 'express'
-import routes from './routes'
-import './lib/db'
+import setup from './setup'
 
 const app = express()
 
-app.use('/static', express.static(__static))
-app.use('/assets', express.static(__assets))
-
-for (const [key, route] of Object.entries(routes)) {
-  app.use(key, route)
-}
+setup(app)
 
 app.get('/', (req, res) => {
   res.send('Hello World!')
