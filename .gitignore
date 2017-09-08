@@ -1,4 +1,7 @@
 data/
+dist/
+www/
+assets/
 
 ##################################
 ### generated gitignore settings

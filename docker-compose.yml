@@ -1,4 +1,4 @@
-client:
+admin:
   build: .
   command: bash
   volumes:
@@ -6,26 +6,13 @@ client:
   ports:
     - 8080:8080
   # expose:
-  #   - 8080:8080
-  tty: true
-  environment:
-    - PORT_CLIENT=8080
-
-server:
-  build: .
-  command: bash
-  volumes:
-    - .:/home/admin/app
-  ports:
-    - 8020:8020
-  # expose:
   #   - 8020:8020
   links:
     - mongo
     - redis
   tty: true
   environment:
-    - PORT_CLIENT=8020
+    - PORT_ADMIN=8080
 
 mongo:
   image: mongo:3.4.8
