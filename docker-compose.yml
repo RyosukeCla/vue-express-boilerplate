@@ -1,0 +1,47 @@
+client:
+  build: .
+  command: bash
+  volumes:
+    - .:/home/admin/app
+  ports:
+    - 8080:8080
+  # expose:
+  #   - 8080:8080
+  tty: true
+  environment:
+    - PORT_CLIENT=8080
+
+server:
+  build: .
+  command: bash
+  volumes:
+    - .:/home/admin/app
+  ports:
+    - 8020:8020
+  # expose:
+  #   - 8020:8020
+  links:
+    - mongo
+    - redis
+  tty: true
+  environment:
+    - PORT_CLIENT=8020
+
+mongo:
+  image: mongo:3.4.8
+  volumes:
+    - ./data/mongo:/data/db
+  ports:
+    - 27017:27017
+
+redis:
+  image: redis:4.0.1
+  volumes:
+    - ./data/redis:/data
+  ports:
+    - 6379:6379
+
+
+
+
+
