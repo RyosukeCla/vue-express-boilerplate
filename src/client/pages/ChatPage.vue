@@ -1,12 +1,12 @@
 <template lang="pug">
   div
-    div chat
+    div chat page
     div(v-for="message in chatStore.messages") {{message}}
     input(v-model="currentMessage")
     button(@click="submit") send
 </template>
 <script>
-import ChatStore from './stores/ChatStore'
+import ChatStore from '../stores/ChatStore'
 
 export default {
   data () {
