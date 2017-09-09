@@ -1,4 +1,3 @@
 export default {
-  '/': require('./vuehot').default,
-  '/account': require('./account').default
+  '/': require('./vuehot').default
 }
