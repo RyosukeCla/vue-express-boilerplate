@@ -100,7 +100,11 @@ const webpackClientConfig = {
     alias: {
       'vue$': 'vue/dist/vue.esm.js',
       '@': path.resolve(__dirname, '../src/client'),
-    }
+    },
+    modules: [
+      'node_modules',
+      path.resolve(__dirname, '../src/lib')
+    ]
   },
   stats: {
     warnings: false

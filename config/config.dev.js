@@ -1,4 +1,7 @@
 module.exports = {
+  admin: {
+    port: 8080
+  },
   redis: {
     port: 'localhost:6379'
   },

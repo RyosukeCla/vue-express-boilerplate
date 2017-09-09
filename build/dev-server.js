@@ -1,5 +1,5 @@
 const express = require('express')
-
+const config = require('../config')
 const app = express()
 
 const webpack = require('webpack')
@@ -11,7 +11,7 @@ app.use(require('webpack-dev-middleware')(compiler, {
 }))
 app.use(require("webpack-hot-middleware")(compiler))
 
-const server = require('../www/server.dev.js')
-server(app, express)
+const setup = require('../www/server.dev.js')
+const server = setup(app)
 
-app.listen(8080)
+server.listen(config.dev.admin.port)

@@ -41,6 +41,7 @@ const webpackConfig = {
     modules: [
       'node_modules',
       path.resolve(__dirname, '../src/server/lib'),
+      path.resolve(__dirname, '../src/lib')
     ]
   },
   target: 'node',
