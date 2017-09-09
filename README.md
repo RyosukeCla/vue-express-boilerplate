@@ -1,6 +1,7 @@
 # Vue Express Boilerplate
 
 Full featured boilerplate
+
 | features    |
 |:-----------:|
 | es2017      |
