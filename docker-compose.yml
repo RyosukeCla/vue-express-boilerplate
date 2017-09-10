@@ -13,6 +13,7 @@ admin:
   tty: true
   environment:
     - PORT_ADMIN=8080
+    - DEBUG=nightmare
 
 mongo:
   image: mongo:3.4.8
