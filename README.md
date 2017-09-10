@@ -25,6 +25,8 @@ start to develop
 $ docker-compose exec admin npm run watch
 ```
 
+go to [localhost](localhost:8080)
+
 ## docs
 - [promise.io api](./docs/promise.io.md)
 
