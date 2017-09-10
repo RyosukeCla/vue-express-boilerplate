@@ -1,7 +1,8 @@
 <template lang="pug">
   div
     div chat page
-    div(v-for="message in chatStore.messages") {{message}}
+    ul.messages
+      li.message(v-for="message in chatStore.messages") {{message}}
     input(v-model="currentMessage")
     button(@click="submit") send
 </template>
