@@ -1,7 +1,7 @@
 import express from 'express'
 import routes from './routes'
 import './lib/db'
-// import path from 'paht'
+// import path from 'path'
 // import favicon from 'serve-favicon'
 import logger from 'morgan'
 import cookieParser from 'cookie-parser'
@@ -17,20 +17,6 @@ export default (app) => {
   // setup sockets
   promiseIO.use(io)
   require('./sockets')
-
-  io.on('connection', (socket) => {
-    socket.emit('s-emit', 'hi')
-    socket.on('s-on', (mes) => {
-      io.emit('s-emit', 'hello' + Math.random())
-    })
-  })
-
-  io.on('connection', (socket) => {
-    socket.emit('s-emit2', 'hi')
-    socket.on('s-on2', (mes) => {
-      io.emit('s-emit2', 'hello2' + Math.random())
-    })
-  })
 
   // set view engine
   app.set('view engine', 'pug')

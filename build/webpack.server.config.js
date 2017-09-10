@@ -54,12 +54,6 @@ const webpackConfig = {
     warnings: false
   },
   plugins: [
-    new CopyWebpackPlugin([
-      {
-        from: path.resolve(__dirname, '../src/views'),
-        to: path.resolve(__dirname, '../dist/views')
-      }
-    ]),
     new webpack.DefinePlugin({
       '__static': `"${path.resolve(__dirname, '../static')}"`
     }),

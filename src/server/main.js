@@ -8,8 +8,4 @@ const app = express()
 
 const server = setup(app)
 
-app.get('/', (req, res) => {
-  res.send('Hello World!')
-})
-
 server.listen(isProduction ? config.prod.admin.port : config.dev.admin.port)

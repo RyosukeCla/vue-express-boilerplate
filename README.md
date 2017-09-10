@@ -40,27 +40,26 @@ $ npm i
 
 ## develop
 ```
-$ docker-compose exec admin bash
-$ npm run dev
+$ docker-compose exec admin npm run dev
 ```
-
-go to [localhost](http://localhost:8080)
 
 ## e2e test
 ```
-$ docker-compose exec admin bash
-$ npm run test:e2e
+$ docker-compose exec admin npm run test:e2e
 ```
 
 ## unit test
 ```
-$ docker-compose exec admin bash
-$ npm run test:unit
+$ docker-compose exec admin npm run test:unit
 ```
 
 ## production
+build for production
 ```
-$ docker-compose exec admin bash
-$ cd app
-$ npm run build
+$ docker-compose exec admin npm run build
+```
+
+start server
+```
+$ docker-compose exec admin npm run start
 ```

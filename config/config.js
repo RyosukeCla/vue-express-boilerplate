@@ -3,11 +3,12 @@ module.exports = {
     port: 8080
   },
   redis: {
-    port: 8080,
-    host: 'localhost'
+    port: 'localhost:6379'
   },
   mongo: {
-    port: 27010,
-    uri: 'localhost'
+    port: 27017,
+    // uri: 'localhost'
+    uri: 'mongo',
+    db: 'vue_express_boilerplate'
   }
 }
