@@ -22,7 +22,7 @@ $ docker-compose exec admin npm install
 ```
 start to develop
 ```
-$ docker-compose exec admin npm run watch
+$ docker-compose exec admin npm run dev
 ```
 
 go to [localhost](http://localhost:8080)

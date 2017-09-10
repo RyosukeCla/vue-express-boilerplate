@@ -37,9 +37,13 @@ const webpackClientConfig = {
       },
       {
         test: /\.(scss)$/,
-        use: ExtractTextPlugin.extract({
+        use: ExtractTextPlugin
+        .extract({
           fallback: 'style-loader',
-          use: 'sass-loader'
+          use: [
+            {loader: 'css-loader', query: { modules: false, sourceMaps: !isProduction}},
+            {loader: 'sass-loader?indentedSyntax=1', query: { sourceMaps: !isProduction}}
+          ]
         })
       },
       {
@@ -62,8 +66,14 @@ const webpackClientConfig = {
           options: {
             extractCSS: process.env.NODE_ENV === 'production',
             loaders: {
-              sass: 'vue-style-loader!css-loader!sass-loader?indentedSyntax=1',
-              scss: 'vue-style-loader!css-loader!sass-loader'
+              sass: isProduction ? ExtractTextPlugin.extract({
+                use: 'css-loader!sass-loader?indentedSyntax=1',
+                fallback: 'vue-style-loader'
+              }) : 'vue-style-loader!css-loader!sass-loader?indentedSyntax=1',
+              scss: isProduction ? ExtractTextPlugin.extract({
+                use: 'css-loader!sass-loader',
+                fallback: 'vue-style-loader'
+              }) : 'vue-style-loader!css-loader!sass-loader'
             }
           }
         }
@@ -91,7 +101,7 @@ const webpackClientConfig = {
     ]
   },
   output: {
-    filename: '[name].js',
+    filename: isProduction ? '[name].prod.js' : '[name].dev.js',
     path: path.resolve(__dirname, '../assets'),
     publicPath: '/assets/'
   },
@@ -111,7 +121,9 @@ const webpackClientConfig = {
   },
   target: 'web',
   plugins: [
-    new ExtractTextPlugin('app.style.css')
+    new ExtractTextPlugin({
+      filename: isProduction ? 'app.prod.css' : 'app.dev.css'
+    })
   ]
 }
 
@@ -126,7 +138,8 @@ if (isProduction) {
     }),
     new webpack.LoaderOptionsPlugin({
       minimize: true
-    })
+    }),
+    new webpack.NoEmitOnErrorsPlugin()
   )
 } else {
   webpackClientConfig.entry.app.unshift('webpack-hot-middleware/client')

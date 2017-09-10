@@ -1,6 +1,13 @@
 html
   header
     title Vue Express Boilerplate
+    if isProduction
+      link(rel="stylesheet" type="text/css" href="/assets/app.prod.css")
+    else
+      link(rel="stylesheet" type="text/css" href="/assets/app.dev.css")
   body
     #app
-    script(src="/assets/app.js")
+    if isProduction
+      script(src="/assets/app.prod.js")
+    else
+      script(src="/assets/app.dev.js")

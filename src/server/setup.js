@@ -22,6 +22,9 @@ export default (app) => {
   app.set('view engine', 'pug')
   app.set('views', __views)
 
+  // set locals
+  app.locals.isProduction = process.env.NODE_ENV === 'production'
+
   // app.use(favicon(path.resolve(__static, 'image', 'favicon.ico')));
   app.use(logger('dev'))
   app.use(bodyParser.json())
