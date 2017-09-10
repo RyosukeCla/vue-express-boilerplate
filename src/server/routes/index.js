@@ -1,3 +1,3 @@
 export default {
-  '/': require('./vuehot').default
+  '/': require('./chat').default
 }
