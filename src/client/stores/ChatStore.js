@@ -16,6 +16,11 @@ class ChatStore {
     })
   }
 
+  destroy () {
+    this.chat.close()
+    this.state.messages = null
+  }
+
   submit (message) {
     this.chat.sendAsync('submit', message)
   }

@@ -1,3 +1,4 @@
 export default {
-  '/': require('./chat').default
+  '/': require('./root').default,
+  '/chat': require('./chat').default
 }
