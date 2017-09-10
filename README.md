@@ -1,6 +1,6 @@
-# Vue Express Boilerplate
-
-Full featured boilerplate
+<p align="center">
+  <img src="./docs/title.png" width="100%"/>
+</p>
 
 | Common    | Frontend    | Backend     |
 |:---------:|:-----------:|:-----------:|
@@ -41,6 +41,8 @@ $ npm i
 $ docker-compose exec admin bash
 $ npm run dev
 ```
+
+go to [localhost](localhost:8080)
 
 ## e2e test
 ```
