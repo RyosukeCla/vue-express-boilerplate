@@ -2,21 +2,15 @@
 
 Full featured boilerplate
 
-| features    |
-|:-----------:|
-| es2017      |
-| vue 2.4     |
-| vue-router 2|
-| axios       |
-| express 4   |
-| redis       |
-| mongodb     |
-| socket.io 2 |
-| pug         |
-| scss        |
-| webpack 3   |
-| hot reload  |
-| eslint      |
+| Common    | Frontend    | Backend     |
+|:---------:|:-----------:|:-----------:|
+| es2017    | vue 2.4     | express 4   |
+| socket.io | vue-router 2| mongodb     |
+| axios     | pug         | redis       |
+| webpack 3 | scss        | nodemon     |
+| eslint    | hot reload  |             |
+| mocha     | nightmare   |             |
+| docker    |||
 
 - [promise.io api](./docs/promise.io.md)
 
@@ -24,16 +18,21 @@ Full featured boilerplate
 ```
 $ docker-compose up -d
 $ docker-compose exec admin bash
-$ cd app
 $ npm i
 ```
 
 ## develop
 ```
 $ docker-compose exec admin bash
-$ cd app
-$ npm run watch
+$ npm run test:e2e
 ```
+
+## e2e-test
+```
+$ docker-compose exec admin bash
+
+```
+
 
 ## production
 ```
