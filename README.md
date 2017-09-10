@@ -30,9 +30,8 @@ $ npm run test:e2e
 ## e2e-test
 ```
 $ docker-compose exec admin bash
-
+$ docker
 ```
-
 
 ## production
 ```
