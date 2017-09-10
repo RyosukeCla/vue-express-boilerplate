@@ -17,14 +17,26 @@
           img.feature-item(src="/static/images/express.png")
           .feature-item etc
 
-      h3.section-title Github
-      a(href="https://github.com/RyosukeCla/vue-express-boilerplate" target="_blank") Vue Express Boilerplate
+      h3.section-title - Hello, world! -
+      .section-body
+        p
+          | This is full featured boilerplate which is done in docker,
+          | supporting frontend hot reloading, e2e testing and so on.
+          | So no need to build a development envrironment on your local and to reload your browser.
+        p
+          | Please click chat link in - Examples -. This is a example which implements socket.io chat example with vue.
 
-      h3.section-title Examples
-      router-link(to="/chat") chat
 
-      h3.section-title References
-      .features-col
+      h3.section-title - Github -
+      .section-body
+        a(href="https://github.com/RyosukeCla/vue-express-boilerplate" target="_blank") Vue Express Boilerplate
+
+      h3.section-title - Examples -
+      .section-body
+        router-link(to="/chat") chat
+
+      h3.section-title - References -
+      .section-body.features-col
         ul.features-row
           li
             a(href="https://vuejs.org/" target="_blank") vue
@@ -80,6 +92,11 @@ export default {
 
   .section-title {
     margin-top: 30px;
+  }
+
+  .section-body {
+    padding-left: 50px;
+    padding-right: 50px;
   }
 
   .features-col {
