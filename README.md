@@ -34,9 +34,9 @@ go to [localhost](http://localhost:8080)
 ## setup
 ```
 $ docker-compose up -d
-$ docker-compose exec admin bash
-$ npm i
+$ docker-compose exec admin npm install
 ```
+go to [localhost](http://localhost:8080)
 
 ## develop
 ```
