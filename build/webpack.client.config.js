@@ -30,21 +30,28 @@ const webpackClientConfig = {
       },
       {
         test: /\.(css)$/,
-        use: ExtractTextPlugin.extract({
+        use: isProduction ? ExtractTextPlugin.extract({
           fallback: 'style-loader',
           use: 'css-loader'
-        })
+        }) : [
+          {loader: 'style-loader', query: {sourceMaps: true}},
+          {loader: 'css-loader', query: {modules: false, sourceMaps: true}}
+        ]
       },
       {
         test: /\.(scss)$/,
-        use: ExtractTextPlugin
+        use: isProduction ? ExtractTextPlugin
         .extract({
           fallback: 'style-loader',
           use: [
             {loader: 'css-loader', query: { modules: false, sourceMaps: !isProduction}},
-            {loader: 'sass-loader?indentedSyntax=1', query: { sourceMaps: !isProduction}}
+            {loader: 'sass-loader', query: { sourceMaps: !isProduction}}
           ]
-        })
+        }) : [
+          {loader: 'style-loader', query: {sourceMaps: true}},
+          {loader: 'css-loader', query: {modules: false, sourceMaps: true}},
+          {loader: 'sass-loader', query: {sourceMaps: true}}
+        ]
       },
       {
         test: /\.html$/,
