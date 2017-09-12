@@ -6,6 +6,8 @@ describe('test duckduckgo search results', () => {
     const nightmare = Nightmare()
     nightmare
       .goto('http://localhost:8080')
+      .click('a[href="/chat"]')
+      .wait('.messages')
       .type('input', 'vue express boilerplate')
       .click('button')
       .wait('ul li')
