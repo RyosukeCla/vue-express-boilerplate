@@ -16,6 +16,7 @@ jobs:
           name: start server
           command: |
             docker-compose exec admin npm run start
+          background: true
 
       - run:
           name: test
