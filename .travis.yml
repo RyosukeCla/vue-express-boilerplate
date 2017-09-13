@@ -19,9 +19,9 @@ before_install:
   - docker-compose up -d
 
 before_script:
-  - docker-compose exec admin npm i
-  - docker-compose exec admin npm run build
-  - docker-compose exec admin npm run start
+  - sudo docker-compose exec admin npm i
+  - sudo docker-compose exec admin npm run build
+  - sudo docker-compose exec admin npm run start
 
 scripts:
-  - docker-compose exec admin npm run test
+  - sudo docker-compose exec admin npm run test
