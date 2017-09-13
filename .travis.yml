@@ -9,7 +9,7 @@ services:
   - docker
 
 env:
-  DOCKER_COMPOSE_VERSION: 1.8.0
+  DOCKER_COMPOSE_VERSION: 1.14.0
 
 before_install:
   - sudo rm /usr/local/bin/docker-compose
@@ -18,10 +18,10 @@ before_install:
   - sudo mv docker-compose /usr/local/bin
 
   - docker-compose up -d
-  - docker-compose exec admin npm i
-  - docker-compose exec admin npm run build
 
 before_script:
+  - docker-compose exec admin npm i
+  - docker-compose exec admin npm run build
   - docker-compose exec admin npm run start
 
 scripts:
