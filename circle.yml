@@ -1,0 +1,30 @@
+version: 2
+
+branches:
+  only:
+    - master
+    - /feature\/.*/
+
+jobs:
+  build:
+    machine: true
+    steps:
+      - checkout
+
+      - run:
+          name: setup
+          command: |
+            docker-compose up -d
+            docker-compose exec admin npm i
+            docker-compose exec admin npm run build
+
+      - run:
+          name: start server
+          command: |
+            docker-compose exec admin npm run start
+          background: true
+
+      - run:
+          name: test
+          command: |
+            docker-compose exec admin npm run test
