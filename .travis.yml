@@ -16,12 +16,12 @@ before_install:
   - chmod +x docker-compose
   - sudo mv docker-compose /usr/local/bin
 
-  - docker-compose up -d
+  - sudo docker-compose up -d
 
 before_script:
-  - sudo docker-compose exec admin npm i
-  - sudo docker-compose exec admin npm run build
-  - sudo docker-compose exec admin npm run start
+  - sudo docker-compose exec admin sudo npm i
+  - sudo docker-compose exec admin sudo npm run build
+  - sudo docker-compose exec admin sudo npm run start
 
 scripts:
-  - sudo docker-compose exec admin npm run test
+  - sudo docker-compose exec admin sudo npm run test
