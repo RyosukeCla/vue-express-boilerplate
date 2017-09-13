@@ -1,4 +1,9 @@
 version: 2
+
+branches:
+  only:
+    - master
+
 jobs:
   build:
     machine: true
