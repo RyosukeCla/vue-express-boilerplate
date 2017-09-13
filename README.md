@@ -1,9 +1,11 @@
 <p align="center">
-  <img src="./docs/title.png" width="100%"/>
   <a href="https://circleci.com/gh/RyosukeCla/vue-express-boilerplate/tree/master"><img src="https://circleci.com/gh/RyosukeCla/vue-express-boilerplate/tree/master.svg?style=shield" /></a>
   <a href="https://github.com/RyosukeCla/vue-express-boilerplate/blob/master/LICENSE"><img src="https://badges.frapsoft.com/os/mit/mit.svg?v=103"/></a>
   <a href="https://codeclimate.com/github/RyosukeCla/vue-express-boilerplate"><img src="https://codeclimate.com/github/RyosukeCla/vue-express-boilerplate.svg"/></a>
-  <img src="http://forthebadge.com/images/badges/built-with-love.svg" />
+  <img src="http://forthebadge.com/images/badges/built-with-love.svg" height="21"/>
+</p>
+<p align="center">
+  <img src="./docs/title.png" width="100%"/>
 </p>
 
 | Common    | Frontend    | Backend     |
@@ -41,12 +43,12 @@ go to [localhost](http://localhost:8080)
 $ docker-compose up -d
 $ docker-compose exec admin npm install
 ```
-go to [localhost](http://localhost:8080)
 
 ## develop
 ```
 $ docker-compose exec admin npm run dev
 ```
+go to [localhost](http://localhost:8080)
 
 ## e2e test
 ```
