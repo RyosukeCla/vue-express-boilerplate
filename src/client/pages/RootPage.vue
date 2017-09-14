@@ -20,7 +20,7 @@
       h3.section-title - Hello, world! -
       .section-body
         p
-          | This is full featured boilerplate which is done in docker,
+          | This is a full featured boilerplate which is done in docker,
           | supporting frontend hot reloading, e2e testing and so on.
           | So no need to build a development envrironment on your local and to reload your browser.
         p
@@ -86,8 +86,9 @@ export default {
   -webkit-font-smoothing: antialiased;
 
   .title {
-    margin-top: 30px;
-    margin-bottom: 30px;
+    margin-top: 60px;
+    margin-bottom: 60px;
+    font-size: 300%;
   }
 
   .section-title {
