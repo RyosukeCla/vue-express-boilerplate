@@ -6,20 +6,10 @@ module.exports = function(config) {
   config.set({
     frameworks: ['mocha', 'chai'],
     files: [
-      'specs/**/*.spec.js',
-      '../../src/client/**/*.js',
-      '../../src/client/**/*.vue',
-      '../../src/client/**/*.scss',
-      '../../src/client/**/*.css',
-      '../../src/lib/**/*.js'
+      'unit/**/*.spec.js'
     ],
     preprocessors: {
-      'specs/**/*.spec.js': ['webpack', 'sourcemap'],
-      '../../src/client/**/*.js': ['webpack', 'sourcemap'],
-      '../../src/client/**/*.vue': ['webpack', 'sourcemap'],
-      '../../src/client/**/*.scss': ['webpack', 'sourcemap'],
-      '../../src/client/**/*.css': ['webpack', 'sourcemap'],
-      '../../src/lib/**/*.js': ['webpack', 'sourcemap']
+      'unit/**/*.spec.js': ['webpack', 'sourcemap']
     },
     webpack: webpackConfig,
     reporters: ['progress'],

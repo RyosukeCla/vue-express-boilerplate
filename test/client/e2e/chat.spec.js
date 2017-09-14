@@ -1,8 +1,8 @@
 import Nightmare from 'nightmare'
 import {expect} from 'chai'
 
-describe('test duckduckgo search results', () => {
-  it('should find the nightmare github link first', (done) => {
+describe('chat', () => {
+  it('should work', (done) => {
     const nightmare = Nightmare()
     nightmare
       .goto('http://localhost:8080')
@@ -19,7 +19,7 @@ describe('test duckduckgo search results', () => {
         expect(message).to.equal('vue express boilerplate')
         done()
       }).catch((e) => {
-        console.error('Search failed:', e)
+        console.error('Failed:', e)
       })
   })
 })
