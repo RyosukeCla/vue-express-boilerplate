@@ -25,6 +25,7 @@
 | eslint    | hot reload  |             |
 | mocha     | nightmare   |             |
 | docker    |||
+| nginx     |||
 
 
 ## getting started
@@ -40,7 +41,7 @@ start to develop
 $ docker-compose exec admin npm run dev
 ```
 
-go to [localhost](http://localhost:8080)
+go to [localhost](http://localhost)
 
 ## docs
 - [promise.io api](./docs/promise.io.md)
@@ -56,7 +57,7 @@ $ docker-compose exec admin npm install
 ```
 $ docker-compose exec admin npm run dev
 ```
-go to [localhost](http://localhost:8080)
+go to [localhost](http://localhost)
 
 ## e2e test
 ```
@@ -83,4 +84,9 @@ $ docker-compose exec admin npm run build
 start server
 ```
 $ docker-compose exec admin npm run start
+```
+
+stop server
+```
+$ docker-compose exec admin npm run stop
 ```

@@ -6,6 +6,6 @@ const isProduction = process.env.NODE_ENV === 'production'
 const port = process.env.REDIS_PORT ||
   (isProduction ? config.prod.redis.port : config.dev.redis.port)
 
-const client = redis.createClient(port)
+const client = redis.createClient(port, 'redis')
 
 export default client
