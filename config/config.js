@@ -3,7 +3,8 @@ module.exports = {
     port: 8080
   },
   redis: {
-    port: 'localhost:6379'
+    host: 'localhost',
+    port: '6379'
   },
   mongo: {
     port: 27017,
