@@ -1,35 +1,45 @@
-admin:
-  build: .
-  command: bash
-  volumes:
-    - .:/home/admin/app
-  ports:
-    - 8080:8080
-  # expose:
-  #   - 8020:8020
-  links:
-    - mongo
-    - redis
-  tty: true
-  environment:
-    - PORT_ADMIN=8080
-    - DEBUG=nightmare
+version: '3.3'
+services:
+  proxy:
+    image: nginx
+    ports:
+      - 80:80
+      - 443:443
+    volumes:
+      - ./nginx/conf.d:/etc/nginx/conf.d
+    links:
+      - admin
+    tty: true
 
-mongo:
-  image: mongo:3.4.8
-  volumes:
-    - ./data/mongo:/data/db
-  ports:
-    - 27017:27017
+  admin:
+    build: .
+    command: bash
+    volumes:
+      - .:/home/admin/app
+    ports:
+      - 8080:8080
+    links:
+      - mongo
+      - redis
+    tty: true
+    depends_on:
+      - mongo
+      - redis
+    environment:
+      - PORT_ADMIN=8080
+      - DEBUG=nightmare
 
-redis:
-  image: redis:4.0.1
-  volumes:
-    - ./data/redis:/data
-  ports:
-    - 6379:6379
+  mongo:
+    image: mongo:3.4.8
+    volumes:
+      - ./data/mongo:/data/db
+    ports:
+      - 27017:27017
 
-
-
-
+  redis:
+    image: redis:4.0.1
+    volumes:
+      - ./data/redis:/data
+    ports:
+      - 6379:6379
 
