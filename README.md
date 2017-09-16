@@ -84,3 +84,8 @@ start server
 ```
 $ docker-compose exec admin npm run start
 ```
+
+stop server
+```
+$ docker-compose exec admin npm run stop
+```
